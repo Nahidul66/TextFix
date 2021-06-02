@@ -10,7 +10,7 @@ It is a simple Django Project or website in which we can Analyze text and Genera
 4)Extra Spaces Remover<br>
 5)Numbers Remover<br>
 <h1>Password Generator</h1>
-1)25 Characters password [UpperCase, Numbers, Special characters] 
+1)8-25 Characters password [UpperCase, Numbers, Special characters] 
 
 <h1>Requirments</h1>
 python3<br>
