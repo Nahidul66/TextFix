@@ -1,7 +1,7 @@
 # I have created this file - Nahidul_Islam
 from django.http import HttpResponse
 from django.shortcuts import render
-
+import random
 
 def index(request):
     return render(request, 'index.html')
@@ -10,10 +10,35 @@ def index(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def age_calculator(request):
+    return render(request, 'contact.html')
 
 def about(request):
     return render(request, 'about.html')
 
+def passgen(request):
+    return render(request, 'passgen.html')
+
+def password(request):
+
+    characters = list('abcdefghijklmnopqrstuvwxyz')
+
+    if request.GET.get('uppercase'):
+        characters.extend(list('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
+
+    if request.GET.get('numbers'):
+        characters.extend(list('0123456789'))
+
+    if request.GET.get('special'):
+        characters.extend(list('!@#$%^&*()?><:;'))
+
+    length = int(request.GET.get("length"))
+
+    thepassword = ''
+    for x in range(length):
+        thepassword += random.choice(characters)
+
+    return render(request, 'password.html', {'password': thepassword})
 
 def analyze(request):
     # Get the text
